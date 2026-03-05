@@ -1,4 +1,4 @@
-if [[ $(plymouth-set-default-theme) != "omarchy" ]]; then
-  sudo cp -r "$HOME/.local/share/omarchy/default/plymouth" /usr/share/plymouth/themes/omarchy/
-  sudo plymouth-set-default-theme omarchy
+if [[ $(plymouth-set-default-theme) != "zarchlinux" ]]; then
+  sudo cp -r "$HOME/.local/share/zarchlinux/default/plymouth" /usr/share/plymouth/themes/zarchlinux/
+  sudo plymouth-set-default-theme zarchlinux
 fi

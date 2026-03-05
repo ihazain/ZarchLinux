@@ -1,3 +1,3 @@
-echo "Use new Omarchy mirror as default"
+echo "Use new ZarchLinux mirror as default"
 
-omarchy-refresh-pacman
+zarchlinux-refresh-pacman

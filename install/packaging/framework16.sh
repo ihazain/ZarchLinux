@@ -1,3 +1,3 @@
-if omarchy-hw-framework16; then
-  omarchy-pkg-add qmk-hid
+if zarchlinux-hw-framework16; then
+  zarch-pkg-add qmk-hid
 fi

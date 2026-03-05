@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set install mode to online since boot.sh is used for curl installations
-export OMARCHY_ONLINE_INSTALL=true
+export ZARCHLINUX_ONLINE_INSTALL=true
 
 ansi_art='                 ▄▄▄
  ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
@@ -18,33 +18,33 @@ clear
 echo -e "\n$ansi_art\n"
 
 # Use custom branch if instructed, otherwise default to master
-OMARCHY_REF="${OMARCHY_REF:-master}"
+ZARCHLINUX_REF="${ZARCHLINUX_REF:-master}"
 
 # Set mirror based on branch
-if [[ $OMARCHY_REF == "dev" ]]; then
-  export OMARCHY_MIRROR=edge
-  echo 'Server = https://mirror.omarchy.org/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist >/dev/null
-elif [[ $OMARCHY_REF == "rc" ]]; then
-  export OMARCHY_MIRROR=rc
-  echo 'Server = https://rc-mirror.omarchy.org/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist >/dev/null
+if [[ $ZARCHLINUX_REF == "dev" ]]; then
+  export ZARCHLINUX_MIRROR=edge
+  echo 'Server = https://mirror.zarchlinux.org/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist >/dev/null
+elif [[ $ZARCHLINUX_REF == "rc" ]]; then
+  export ZARCHLINUX_MIRROR=rc
+  echo 'Server = https://rc-mirror.zarchlinux.org/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist >/dev/null
 else
-  export OMARCHY_MIRROR=stable
-  echo 'Server = https://stable-mirror.omarchy.org/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist >/dev/null
+  export ZARCHLINUX_MIRROR=stable
+  echo 'Server = https://stable-mirror.zarchlinux.org/$repo/os/$arch' | sudo tee /etc/pacman.d/mirrorlist >/dev/null
 fi
 
 sudo pacman -Syu --noconfirm --needed git
 
-# Use custom repo if specified, otherwise default to basecamp/omarchy
-OMARCHY_REPO="${OMARCHY_REPO:-basecamp/omarchy}"
+# Use custom repo if specified, otherwise default to ihazain/ZarchLinux
+ZARCHLINUX_REPO="${ZARCHLINUX_REPO:-ihazain/ZarchLinux}"
 
-echo -e "\nCloning Omarchy from: https://github.com/${OMARCHY_REPO}.git"
-rm -rf ~/.local/share/omarchy/
-git clone "https://github.com/${OMARCHY_REPO}.git" ~/.local/share/omarchy >/dev/null
+echo -e "\nCloning ZarchLinux from: https://github.com/${ZARCHLINUX_REPO}.git"
+rm -rf ~/.local/share/zarchlinux/
+git clone "https://github.com/${ZARCHLINUX_REPO}.git" ~/.local/share/zarchlinux >/dev/null
 
-echo -e "\e[32mUsing branch: $OMARCHY_REF\e[0m"
-cd ~/.local/share/omarchy
-git fetch origin "${OMARCHY_REF}" && git checkout "${OMARCHY_REF}"
+echo -e "\e[32mUsing branch: $ZARCHLINUX_REF\e[0m"
+cd ~/.local/share/zarchlinux
+git fetch origin "${ZARCHLINUX_REF}" && git checkout "${ZARCHLINUX_REF}"
 cd -
 
 echo -e "\nInstallation starting..."
-source ~/.local/share/omarchy/install.sh
+source ~/.local/share/zarchlinux/install.sh

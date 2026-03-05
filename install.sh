@@ -3,16 +3,16 @@
 # Exit immediately if a command exits with a non-zero status
 set -eEo pipefail
 
-# Define Omarchy locations
-export OMARCHY_PATH="$HOME/.local/share/omarchy"
-export OMARCHY_INSTALL="$OMARCHY_PATH/install"
-export OMARCHY_INSTALL_LOG_FILE="/var/log/omarchy-install.log"
-export PATH="$OMARCHY_PATH/bin:$PATH"
+# Define ZarchLinux locations
+export ZARCHLINUX_PATH="$HOME/.local/share/zarchlinux"
+export ZARCHLINUX_INSTALL="$ZARCHLINUX_PATH/install"
+export ZARCHLINUX_INSTALL_LOG_FILE="/var/log/zarchlinux-install.log"
+export PATH="$ZARCHLINUX_PATH/bin:$PATH"
 
 # Install
-source "$OMARCHY_INSTALL/helpers/all.sh"
-source "$OMARCHY_INSTALL/preflight/all.sh"
-source "$OMARCHY_INSTALL/packaging/all.sh"
-source "$OMARCHY_INSTALL/config/all.sh"
-source "$OMARCHY_INSTALL/login/all.sh"
-source "$OMARCHY_INSTALL/post-install/all.sh"
+source "$ZARCHLINUX_INSTALL/helpers/all.sh"
+source "$ZARCHLINUX_INSTALL/preflight/all.sh"
+source "$ZARCHLINUX_INSTALL/packaging/all.sh"
+source "$ZARCHLINUX_INSTALL/config/all.sh"
+source "$ZARCHLINUX_INSTALL/login/all.sh"
+source "$ZARCHLINUX_INSTALL/post-install/all.sh"

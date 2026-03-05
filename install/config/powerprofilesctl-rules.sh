@@ -1,5 +1,5 @@
-if omarchy-battery-present; then
-  mapfile -t profiles < <(omarchy-powerprofiles-list)
+if zarchlinux-battery-present; then
+  mapfile -t profiles < <(zarchlinux-powerprofiles-list)
 
   if (( ${#profiles[@]} > 1 )); then
 
