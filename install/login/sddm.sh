@@ -1,5 +1,5 @@
 # Install zarchlinux SDDM theme
-zarchlinux-refresh-sddm
+zarch-refresh-sddm
 
 # Setup SDDM login service
 sudo mkdir -p /etc/sddm.conf.d

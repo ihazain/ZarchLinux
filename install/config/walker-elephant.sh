@@ -21,7 +21,7 @@ Target = elephant*
 [Action]
 Description = Restarting Walker services after system update
 When = PostTransaction
-Exec = $ZARCHLINUX_PATH/bin/zarchlinux-restart-walker
+Exec = $ZARCHLINUX_PATH/bin/zarch-restart-walker
 EOF
 
 # Link the visual theme menu config

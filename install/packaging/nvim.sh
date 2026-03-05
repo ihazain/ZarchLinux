@@ -1,2 +1,2 @@
 # Includes lazyvim and the themes
-zarchlinux-nvim-setup
+zarch-nvim-setup

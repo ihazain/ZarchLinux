@@ -20,8 +20,8 @@ else
   echo_in_style "Finished installing"
 fi
 
-if sudo test -f /etc/sudoers.d/99-zarchlinux-installer; then
-  sudo rm -f /etc/sudoers.d/99-zarchlinux-installer &>/dev/null
+if sudo test -f /etc/sudoers.d/99-zarch-installer; then
+  sudo rm -f /etc/sudoers.d/99-zarch-installer &>/dev/null
 fi
 
 # Exit gracefully if user chooses not to reboot
@@ -30,7 +30,7 @@ if gum confirm --padding "0 0 0 $((PADDING_LEFT + 32))" --show-help=false --defa
   clear
 
   if [[ -n ${ZARCHLINUX_CHROOT_INSTALL:-} ]]; then
-    touch /var/tmp/zarchlinux-install-completed
+    touch /var/tmp/zarch-install-completed
     exit 0
   else
     sudo reboot 2>/dev/null
